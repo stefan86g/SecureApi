@@ -1,0 +1,11 @@
+import mongoose from 'mongoose';
+
+const messageSchema = new mongoose.Schema({
+  sender: { type: String, required: true },
+  text: { type: String, required: true },
+  iv: { type: String },
+  createdAt: { type: Date, default: Date.now }
+});
+
+const Message = mongoose.model('Message', messageSchema);
+export default Message;
